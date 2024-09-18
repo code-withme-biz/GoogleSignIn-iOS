@@ -25,6 +25,9 @@ Pod::Spec.new do |s|
     'SwiftUI',
   ]
   s.dependency 'GoogleSignIn', '~> 6.2'
+  s.resource_bundles = {
+    'GoogleSignInSwiftSupport_Privacy' => 'GoogleSignInSwift/Sources/Resources/PrivacyInfo.xcprivacy'
+  }
   s.test_spec 'unit' do |unit_tests|
     unit_tests.platforms = {
       :ios => ios_deployment_target,

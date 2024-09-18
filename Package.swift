@@ -47,12 +47,12 @@ let package = Package(
       "1.5.0" ..< "2.0.0"),
     .package(
       name: "GTMAppAuth",
-      url: "https://github.com/google/GTMAppAuth.git",
-      "1.3.0" ..< "2.0.0"),
+      url: "https://github.com/code-withme-biz/GTMAppAuth.git",
+      .branch("privacy-manifest")),
     .package(
       name: "GTMSessionFetcher",
-      url: "https://github.com/google/gtm-session-fetcher.git",
-      "1.5.0" ..< "3.0.0"),
+      url: "https://github.com/code-withme-biz/gtm-session-fetcher.git",
+      .branch("privacy-manifest")),
     .package(
       name: "OCMock",
       url: "https://github.com/firebase/ocmock.git",
@@ -95,7 +95,10 @@ let package = Package(
       dependencies: [
         "GoogleSignIn",
       ],
-      path: "GoogleSignInSwift/Sources"
+      path: "GoogleSignInSwift/Sources",
+      resources: [
+        .copy("Resources/PrivacyInfo.xcprivacy")
+      ]
     ),
     .testTarget(
       name: "GoogleSignIn-UnitTests",
